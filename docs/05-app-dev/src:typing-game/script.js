@@ -37,7 +37,7 @@ document.getElementById('start').addEventListener('click', () => {
 
   // UI updates
   // Clear the quote element
-  quoteElement.innerHTML = '';
+  quoteElement.textContent = '';
   // Create span elements for each word
   words.forEach(function(word) {
     const span = document.createElement('span');
