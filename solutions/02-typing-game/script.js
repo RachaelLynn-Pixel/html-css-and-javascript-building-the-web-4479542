@@ -30,10 +30,14 @@ document.getElementById('start').addEventListener('click', function () {
 	wordIndex = 0;
 
 	// UI updates
-	// Create an array of span elements so we can set a class
-	const spanWords = words.map(function(word) { return `<span>${word} </span>`});
-	// Convert into string and set as innerHTML on quote display
-	quoteElement.innerHTML = spanWords.join('');
+	// Clear the quote element
+	quoteElement.innerHTML = '';
+	// Create span elements for each word
+	words.forEach(function(word) {
+		const span = document.createElement('span');
+		span.textContent = word + ' ';
+		quoteElement.appendChild(span);
+	});
 	// Highlight the first word
 	quoteElement.childNodes[0].className = 'highlight';
 	// Clear any prior messages
